@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f8ff;
+}
+
+button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+#hoverBox {
+  background-color: lightgray;
+  padding: 1rem;
+  margin: 1rem;
+  transition: background-color 0.3s;
+}
+
+.tabContent {
+  display: none;
+  margin-top: 1rem;
+}
+
+.tabContent.active {
+  display: block;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#passwordFeedback {
+  font-size: 0.9rem;
+  color: red;
+}
