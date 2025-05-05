@@ -1,83 +1,87 @@
-// Button click to change color
 document.getElementById("colorBtn").addEventListener("click", function () {
-  this.style.backgroundColor = "hotpink";
-  this.textContent = "Clicked!";
+  this.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  this.textContent = "🌼 Bloomed!";
 });
 
-// Secret action: double click
-document.getElementById("secretBtn").addEventListener("dblclick", function () {
-  alert("You found the secret!");
+document.getElementById("secretBtn").addEventListener("dblclick", () => {
+  alert("🌹 Secret garden unlocked!");
 });
 
-// Hover effect
 const hoverBox = document.getElementById("hoverBox");
-hoverBox.addEventListener("mouseover", () => hoverBox.style.backgroundColor = "#90ee90");
-hoverBox.addEventListener("mouseout", () => hoverBox.style.backgroundColor = "lightgray");
-
-// Keypress detection
-document.addEventListener("keydown", function (e) {
-  document.getElementById("keypressOutput").textContent = `You pressed: ${e.key}`;
+hoverBox.addEventListener("mouseover", () => {
+  hoverBox.style.backgroundColor = "#ff69b4";
+});
+hoverBox.addEventListener("mouseout", () => {
+  hoverBox.style.backgroundColor = "#444";
 });
 
-// Tabs
-const tabBtns = document.querySelectorAll(".tabBtn");
-const tabContents = document.querySelectorAll(".tabContent");
+document.addEventListener("keydown", (e) => {
+  document.getElementById("keypressOutput").textContent = `You typed: ${e.key}`;
+});
 
-tabBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const target = btn.dataset.tab;
-    tabContents.forEach(tc => tc.classList.remove("active"));
-    document.getElementById(target).classList.add("active");
+const tabs = document.querySelectorAll(".tabBtn");
+const contents = document.querySelectorAll(".tabContent");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    contents.forEach((content) => content.classList.remove("active"));
+    document.getElementById(tab.dataset.tab).classList.add("active");
   });
 });
 
-// Image gallery
-const images = [
-  "https://via.placeholder.com/200?text=Image+1",
-  "https://via.placeholder.com/200?text=Image+2",
-  "https://via.placeholder.com/200?text=Image+3"
+// 🌼 Flower image slideshow from local images
+const galleryImg = document.getElementById("galleryImg");
+const imageUrls = [
+  "images/flower1.jpg",
+  "images/flower2.jpg",
+  "images/flower3.jpg",
+  "images/flower4.jpg"
 ];
 let currentImg = 0;
 
 document.getElementById("nextImg").addEventListener("click", () => {
-  currentImg = (currentImg + 1) % images.length;
-  document.getElementById("galleryImg").src = images[currentImg];
+  currentImg = (currentImg + 1) % imageUrls.length;
+  galleryImg.src = imageUrls[currentImg];
 });
 
-// Form validation
 const form = document.getElementById("myForm");
-const password = document.getElementById("password");
+const passwordInput = document.getElementById("password");
 const feedback = document.getElementById("passwordFeedback");
 
-password.addEventListener("input", () => {
-  if (password.value.length < 8) {
+passwordInput.addEventListener("input", () => {
+  if (passwordInput.value.length < 8) {
     feedback.textContent = "Password must be at least 8 characters.";
   } else {
     feedback.textContent = "";
   }
 });
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
-  const pass = password.value;
+  const password = passwordInput.value;
 
-  if (!name || !email || !pass) {
-    alert("Please fill out all fields.");
+  if (!name || !email || !password) {
+    alert("🚫 All fields are required.");
     return;
   }
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert("Please enter a valid email address.");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("📧 Please enter a valid email.");
     return;
   }
 
-  if (pass.length < 8) {
-    alert("Password must be at least 8 characters.");
+  if (password.length < 8) {
+    alert("🔒 Password must be at least 8 characters.");
     return;
   }
 
-  alert("Form submitted successfully!");
+  alert("✅ Form submitted successfully!");
 });
+
+
+
+
+
