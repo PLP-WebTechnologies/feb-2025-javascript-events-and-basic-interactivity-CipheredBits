@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌸 Flower Fun Zone 🌸</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>🌺 Welcome to the Flower Fun Zone 🌺</h1>
+
+  <!-- Event Handling -->
+  <section>
+    <h2>Event Handling 🌼</h2>
+    <button id="changeBtn">Click Me!</button>
+    <div id="hoverBox">Hover over me 🌻</div>
+    <p id="keyOutput">Press any key... 🌷</p>
+    <button id="secretBtn">Double-click me 🌸</button>
+  </section>
+
+  <!-- Interactive Elements -->
+  <section>
+    <h2>Interactive Elements 🌹</h2>
+
+    <!-- Slideshow -->
+    <div id="slideshow">
+      <img src="https://images.pexels.com/photos/31930580/pexels-photo-31930580/free-photo-of-vibrant-cherry-blossoms-in-springtime.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="slide active" />
+      <img src="https://images.pexels.com/photos/31801481/pexels-photo-31801481/free-photo-of-vibrant-white-daisies-blossoming-in-spring-garden.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="slide" />
+      <img src="https://images.pexels.com/photos/3812401/pexels-photo-3812401.jpeg?auto=compress&cs=tinysrgb&w=600" class="slide" />
+      <button id="nextSlide">Next 🌼</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab" data-tab="tab1">🌼 Tab 1</button>
+      <button class="tab" data-tab="tab2">🌸 Tab 2</button>
+      <div class="tab-content" id="tab1">💐 Lovely blooms await in Tab 1!</div>
+      <div class="tab-content" id="tab2" style="display:none;">🌺 More petal power in Tab 2!</div>
+    </div>
+  </section>
+
+  <!-- Form Validation -->
+  <section>
+    <h2>Form Validation 🌷</h2>
+    <form id="myForm" novalidate>
+      <input type="text" id="name" placeholder="Name (required)" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password (min 8 chars)" required />
+      <button type="submit">Submit 🌻</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
